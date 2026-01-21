@@ -1,0 +1,7 @@
+# Image processing (required for emulator and hardware)
+Pillow>=9.0.0
+
+# Hardware support (only needed on Raspberry Pi)
+# Uncomment these when deploying to hardware:
+# luma.core>=2.4.0
+# luma.led_matrix>=1.7.0

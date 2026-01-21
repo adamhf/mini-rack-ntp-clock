@@ -1,0 +1,13 @@
+[Unit]
+Description=NTP Clock Display
+After=network.target
+
+[Service]
+ExecStart=/home/dietpi/ntpclock/venv/bin/python /home/dietpi/ntpclock/ntpclock.py -b 16
+WorkingDirectory=/home/dietpi/ntpclock
+User=dietpi
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
