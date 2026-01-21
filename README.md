@@ -44,7 +44,7 @@ A Python application that displays the current time in `HH:MM:SS` format using f
 
 3. Install dependencies:
    ```bash
-   pip install luma.led_matrix spidev Pillow
+   pip install -r requirements.txt
    ```
 
 4. Enable SPI:
@@ -72,6 +72,8 @@ python3 -m venv venv
 source venv/bin/activate
 pip install Pillow
 ```
+
+Note: The emulator only requires Pillow since it uses Tkinter (included with Python).
 
 ## Usage
 
