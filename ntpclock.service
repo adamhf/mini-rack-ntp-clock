@@ -3,9 +3,9 @@ Description=NTP Clock Display
 After=network.target
 
 [Service]
-ExecStart=/home/dietpi/ntpclock/venv/bin/python /home/dietpi/ntpclock/ntpclock.py -b 16
-WorkingDirectory=/home/dietpi/ntpclock
-User=dietpi
+ExecStart=<CHECKOUT_DIRECTORY>/venv/bin/python <CHECKOUT_DIRECTORY>/ntpclock.py -b 16
+WorkingDirectory=<CHECKOUT_DIRECTORY>
+User=<USER>
 Restart=always
 RestartSec=5
 
