@@ -33,7 +33,8 @@ A Python application that displays the current time in `HH:MM:SS` format using f
 
 1. Clone or download this repository:
    ```bash
-   cd ~/ntpclock
+   git clone https://github.com/adamhf/mini-rack-ntp-clock.git
+   cd mini-rack-ntp-clock
    ```
 
 2. Create a virtual environment:
@@ -132,21 +133,20 @@ The display shows time in `HH:MM:SS` format across 32x8 pixels:
 
 ## Running at Boot (Raspberry Pi)
 
-A systemd service file is included. To install:
+A systemd service file template is included. To install:
 
-```bash
-# Copy the service file
-sudo cp ntpclock.service /etc/systemd/system/
+1. Edit `ntpclock.service` and replace the placeholders:
+   - `<CHECKOUT_DIRECTORY>` - the full path to where you cloned the repo (e.g., `/home/pi/mini-rack-ntp-clock`)
+   - `<USER>` - your username (e.g., `pi` or `dietpi`)
+   - Optionally adjust the `-b 16` brightness value
 
-# Reload systemd
-sudo systemctl daemon-reload
-
-# Enable to start on boot
-sudo systemctl enable ntpclock.service
-
-# Start now
-sudo systemctl start ntpclock.service
-```
+2. Copy and enable the service:
+   ```bash
+   sudo cp ntpclock.service /etc/systemd/system/
+   sudo systemctl daemon-reload
+   sudo systemctl enable ntpclock.service
+   sudo systemctl start ntpclock.service
+   ```
 
 To check status or view logs:
 ```bash
@@ -159,8 +159,6 @@ To stop or disable:
 sudo systemctl stop ntpclock.service
 sudo systemctl disable ntpclock.service
 ```
-
-**Note:** Edit the service file if you need to adjust the brightness or if your installation path differs from `/home/dietpi/ntpclock/`.
 
 ## Troubleshooting
 
